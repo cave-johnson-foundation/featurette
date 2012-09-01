@@ -1,5 +1,5 @@
 describe Feature do
-  let(:feature) {Feature.new(current_amount: 0, goal: 0)}
+  let(:feature) {Feature.new(current_amount: 10, goal: 0)}
 
   it { should respond_to :description }
   it { should belong_to :app }
