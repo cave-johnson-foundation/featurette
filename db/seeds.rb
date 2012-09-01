@@ -6,8 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-
 apps = App.create([
   { name: 'Diaroogle', url: 'http://www.diaroogle.com' },
   { name: 'Twitter', url: 'http://www.twitter.com' },
