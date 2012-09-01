@@ -34,6 +34,6 @@ namespace :integrate do
     raise "Someone is currently deploying" if deploying?
   end
   task :unlock do
-    delete "/tmp/deploying"
+    run "rm /tmp/deploying"
   end
 end
