@@ -36,13 +36,13 @@
     #wrap
       %header.navbar.navbar-fixed-top
         #masthead
-          /- if current_user
-          /  %p
-          /    = "Bem-vindo <strong>#{current_user.name}</strong> &bull; ".html_safe
-          /    = link_to "Sair", logout_path
-          /- else
-          /  %p
-          /    = link_to "Acesse com facebookk", "/auth/facebook", :id => "facebook-connect"
+          - if current_user
+            %p
+              = "Bem-vindo <strong>#{current_user.name}</strong> &bull; ".html_safe
+              = link_to "Sair", logout_path
+          - else
+            %p
+              = link_to "Acesse com facebook", "/auth/facebook", :id => "facebook-connect"
 
         #logo<
           = link_to "Logo", root_url
