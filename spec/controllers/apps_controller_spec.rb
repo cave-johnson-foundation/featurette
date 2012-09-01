@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe AppsController do
   let(:diaroogle) { build :app }
   let(:twitter) { build :app }
@@ -12,8 +10,10 @@ describe AppsController do
       get :index
     end
 
+    it { should respond_with(:success) }
     it { assigns(:apps).should =~ apps }
-    it { render_template :index }
+    it { should render_template :index }
+    it { should_not set_the_flash }
   end
 
   describe '#show' do
@@ -22,7 +22,9 @@ describe AppsController do
       get :show, id: 42
     end
 
+    it { should respond_with(:success) }
     it { assigns(:app).should eq diaroogle }
-    it { render_template :show }
+    it { should render_template :show }
+    it { should_not set_the_flash }
   end
 end
