@@ -5,7 +5,7 @@
     %meta{:name => "keywords", :content => ""}
     %meta{:name => "description", :content => ""}
 
-    %title= yield(:title) + "Titulo aqui"
+    %title= yield(:title) + "Featurette"
 
     %link{:href => "/favicon.png", :rel => "shortcut icon"}
     = yield(:header_tags)
@@ -34,7 +34,7 @@
 
   %body{:id => controller.controller_name}
     #wrap
-      %header.navbar.navbar-fixed-top
+      %header
         #masthead
           - if current_user
             %p
@@ -45,7 +45,8 @@
               = link_to "Acesse com facebook", "/auth/facebook", :id => "facebook-connect"
 
         #logo<
-          = link_to "Logo", root_url
+          %h1
+            = link_to "Featurette", root_url
 
         - if notice
           %p.notice

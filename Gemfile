@@ -21,6 +21,7 @@ gem 'omniauth-facebook'
 
 group :assets do
   gem 'sass-rails',         '3.2.5'
+  gem 'compass-rails'
   gem 'coffee-rails',       '3.2.2'
   gem 'uglifier',           '1.2.6'
 end
