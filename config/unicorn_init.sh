@@ -14,7 +14,7 @@ set -e
 TIMEOUT=${TIMEOUT-60}
 APP_ROOT=/home/deployer/apps/blog/current
 PID=$APP_ROOT/tmp/pids/unicorn.pid
-CMD="cd $APP_ROOT; bundle exec unicorn -D -c $APP_ROOT/config/unicorn.rb -E production"
+CMD="cd $APP_ROOT; rvm use 1.9.3@ruby-1.9.3-p194@cave-johnson-foundation; bundle exec unicorn -D -c $APP_ROOT/config/unicorn.rb -E production"
 AS_USER=deployer
 set -u
 

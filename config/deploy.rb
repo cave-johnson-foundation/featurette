@@ -1,8 +1,8 @@
-set :rvm_ruby_string, '1.9.3@cave-johnson-foundation'
 require "bundler/capistrano"
 require "rvm/capistrano"
 set :rvm_type, :system  # Copy the exact line. I really mean :system here
 
+set :rvm_ruby_string, '1.9.3@cave-johnson-foundation'
 load "config/recipes/base"
 load "config/recipes/nginx"
 load "config/recipes/unicorn"
