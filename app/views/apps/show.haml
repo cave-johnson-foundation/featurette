@@ -1,7 +1,8 @@
 %h2
   = @app.name
 %p
-  = @app.url
+  %a{ href: "#{@app.url}" }
+    = @app.url
 
 %footer
   = link_to 'Back', apps_path
