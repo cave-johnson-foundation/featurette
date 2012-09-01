@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120901082437) do
+ActiveRecord::Schema.define(:version => 20120901114436) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -20,11 +20,23 @@ ActiveRecord::Schema.define(:version => 20120901082437) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "donations", :force => true do |t|
+    t.integer  "feature_id"
+    t.decimal  "amount"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "donations", ["feature_id"], :name => "index_donations_on_feature_id"
+
   create_table "features", :force => true do |t|
     t.string   "description"
     t.integer  "app_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "state"
+    t.decimal  "goal"
+    t.decimal  "current_amount"
   end
 
 end
