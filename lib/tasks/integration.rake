@@ -5,7 +5,7 @@ namespace :integration do
 end
 namespace :capistrano do
   task :deploy do
-    `system cap deploy`
+    `cap deploy`
   end
 end
 
