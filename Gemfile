@@ -1,38 +1,43 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails',                '3.2.6'
+gem 'jquery-rails',         '2.0.2'
+gem 'haml-rails',           '0.3.4'
+gem 'thin',                 '1.3.1'
+gem 'pg',                   '0.14.0'
+gem 'rack-canonical-host',  '0.0.8'
+# gem 'paperclip', '3.0.4'
+# gem 'aws-sdk', '1.5.2'
+# gem 'paranoia', '1.1.0'
+# gem 'omniauth', '1.1.0'
+# gem 'omniauth-facebook', '1.3.0'
+# gem 'typus', '3.1.10'
+# gem 'kaminari', '0.13.0'
+# gem 'rdiscount', '1.6.8'
+# gem 'acts_as_hashed', '0.0.2'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
-
-
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platform => :ruby
-
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails',         '3.2.5'
+  gem 'coffee-rails',       '3.2.2'
+  gem 'uglifier',           '1.2.6'
 end
 
-gem 'jquery-rails'
+group :development do
+  gem 'heroku',             '2.28.12'
+  gem 'rspec-rails',        '2.11.0'
+  gem 'integration', :git => 'git://github.com/mergulhao/integration.git'
+end
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+group :test do
+  gem 'rspec-rails',        '2.11.0'
+  gem 'fakeweb',            '1.3.0'
+  gem 'shoulda-matchers',   '1.1.0'
+  gem 'timecop',            '0.3.5'
+  gem 'simplecov', '0.6.1', :require => false
+end
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+group :development, :test do
+  gem 'factory_girl_rails', '1.7.0'
+  gem 'pry-rails',          '0.1.6'
+  gem 'awesome_print',      '1.0.2'
+end
