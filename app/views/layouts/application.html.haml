@@ -34,7 +34,7 @@
 
   %body{:id => controller.controller_name}
     #wrap
-      %header
+      %header.navbar.navbar-fixed-top
         #masthead
           /- if current_user
           /  %p
@@ -42,7 +42,7 @@
           /    = link_to "Sair", logout_path
           /- else
           /  %p
-          /    = link_to "Acesse com Facebook", "/auth/facebook", :id => "facebook-connect"
+          /    = link_to "Acesse com facebookk", "/auth/facebook", :id => "facebook-connect"
 
         #logo<
           = link_to "Logo", root_url
