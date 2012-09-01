@@ -178,6 +178,7 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    state_machine (1.1.2)
     thin (1.3.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -219,6 +220,7 @@ DEPENDENCIES
   sass-rails (= 3.2.5)
   shoulda-matchers (= 1.1.0)
   simplecov (= 0.6.1)
+  state_machine
   thin (= 1.3.1)
   timecop (= 0.3.5)
   uglifier (= 1.2.6)
