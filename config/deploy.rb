@@ -33,6 +33,9 @@ namespace :integrate do
   task :check do
     raise "Someone is currently deploying" if deploying?
   end
+  task :lock do
+    run "touch /tmp/deploying"
+  end
   task :unlock do
     run "rm /tmp/deploying"
   end

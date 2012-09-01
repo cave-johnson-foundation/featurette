@@ -6,6 +6,10 @@ end
 namespace :capistrano do
   task :check do
     `cap integrate:check`
+    raise "Someone is deploying" unless $?.to_s =~ /exit 0/
+  end
+  task :lock do
+    `cap integrate:lock`
   end
   task :deploy do
     `cap deploy`
@@ -17,6 +21,7 @@ end
 
 INTEGRATION_TASKS = %w(
   capistrano:check
+  capistrano:lock
   integration:start
   integration:bundle_install
   db:migrate
