@@ -1,8 +1,15 @@
 %h2
   = @app.name
+
 %p
   %a{ href: "#{@app.url}" }
     = @app.url
+
+%h3 Features    
+- @app.features.each do |feature|
+  %ul
+    %li
+      = feature.description
 
 %footer
   = link_to 'Back', apps_path

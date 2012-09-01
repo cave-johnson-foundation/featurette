@@ -6,6 +6,20 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-App.create name: 'Diaroogle', url: 'http://www.diaroogle.com'
-App.create name: 'Twitter', url: 'http://www.twitter.com'
-App.create name: 'Github', url: 'http://www.github.com'
+
+
+apps = App.create([
+  { name: 'Diaroogle', url: 'http://www.diaroogle.com' },
+  { name: 'Twitter', url: 'http://www.twitter.com' },
+  { name: 'Github', url: 'http://www.github.com' } 
+])
+
+apps.each do |app|
+  Feature.create([
+    { description: 'Play Tetris' },
+    { description: 'Show Naked Chicks' }
+  ]).each do |f|
+    app.features << f
+  end
+  app.save
+end
