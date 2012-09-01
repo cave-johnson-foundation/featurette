@@ -5,12 +5,11 @@
   %a{ href: "#{@app.url}" }
     = @app.url
 
-%h3 Features    
+%h3 Features
 - @app.features.each do |feature|
   %ul
     %li
-      = feature.description
-      = link_to 'Donate!', app_feature_donations_path, method: :post
+      = link_to "#{feature.description}", app_feature_path(@app, feature)
 
 %footer
   = link_to 'Back', apps_path
