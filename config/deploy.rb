@@ -15,7 +15,8 @@ server "199.231.86.38", :web, :app, :db, primary: true
 set :user, "deployer"
 set :application, "featurette"
 set :deploy_to, "/home/#{user}/apps/#{application}"
-set :deploy_via, :remote_cache
+set :deploy_via, :copy
+set :copy_strategy, :export
 set :use_sudo, false
 
 set :scm, "git"
