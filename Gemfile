@@ -26,6 +26,8 @@ group :development do
   gem 'heroku',             '2.28.12'
   gem 'rspec-rails',        '2.11.0'
   gem 'integration', :git => 'git://github.com/mergulhao/integration.git'
+  gem 'capistrano'
+  gem 'rvm-capistrano'
 end
 
 group :test do
