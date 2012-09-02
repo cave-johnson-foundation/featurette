@@ -5,61 +5,61 @@
 $feature-suggestion-height: 6em;
 
 #app-list {
-    @include column(12);
-    @include last;
+  @include column(12);
+  @include last;
 }
 
 #feature-list {
-    @include column(12);
+  @include column(12);
 
-    .feature-suggestion {
-        @include column(11);
-        @include append-bottom;
-        @include border-radius(5px);
+  .feature-suggestion {
+    @include column(11);
+    @include append-bottom;
+    @include border-radius(5px);
 
-        padding-top: 1em;
-        padding-bottom: 1em;
-        
+    padding-top: 1em;
+    padding-bottom: 1em;
 
-        padding-right: $blueprint-grid-margin;
-        background: $feature-background;
-        
-        .feature-title {
-            font-size: 1.75em;
-            margin: 0.125em 0;
-        }
-        .date {
-            text-align: right;
-            color: $quiet-color;
-        }
 
-        p { margin-bottom: 0em; }
+    padding-right: $blueprint-grid-margin;
+    background: $feature-background;
 
-        .app-icon {
-            @include column(2);
-            text-align: center;
-            margin-top: 0.125em;
-            img {
-                width: $app-icon-size;
-                height: $app-icon-size;
-            }
-        }
-
-        .feature-details {
-            @include column(9);
-            @include last;
-        }
-
-        img.user-avatar {
-            width: $user-avatar-size;
-            height: $user-avatar-size;
-            vertical-align: middle;
-        }
+    .feature-title {
+      font-size: 1.75em;
+      margin: 0.125em 0;
+    }
+    .date {
+      text-align: right;
+      color: $quiet-color;
     }
 
-    .feature-suggestion:hover {
-        cursor: pointer;
-        background: $feature-background-hover;
+    p { margin-bottom: 0em; }
+
+    .app-icon {
+      @include column(2);
+      text-align: center;
+      margin-top: 0.125em;
+      img {
+        width: $app-icon-size;
+        height: $app-icon-size;
+      }
     }
+
+    .feature-details {
+      @include column(9);
+      @include last;
+    }
+
+    img.user-avatar {
+      width: $user-avatar-size;
+      height: $user-avatar-size;
+      vertical-align: middle;
+    }
+  }
+
+  .feature-suggestion:hover {
+    cursor: pointer;
+    background: $feature-background-hover;
+  }
 
 }

@@ -36,6 +36,7 @@
 
 #app-list
   %h2 Apps
+  %ul
   - @apps.each do |app|
-    %p
+    %li.app
       = link_to app.name, app

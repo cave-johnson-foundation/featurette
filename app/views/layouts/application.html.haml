@@ -58,14 +58,12 @@
               = link_to "Acess with Facebook", "/auth/facebook", :id => "facebook-connect"
 
     .wrap
-      %hr
       %section{:role => "main"}
         = yield
 
       - if content_for?(:sidebar)
         %aside
           = yield(:sidebar)
-      %hr
       %footer
         %p
           = "Copyright &copy; 2012 Cave Johnson - We use Sendgrid!".html_safe

@@ -6,14 +6,38 @@
 
 @include blueprint;
 
+@font-face {
+  font-family: 'BallparkWeiner';
+  src: url('/assets/ballpark_weiner-webfont.eot');
+  src: url('/assets/ballpark_weiner-webfont.eot?#iefix') format('embedded-opentype'),
+  url('/assets/ballpark_weiner-webfont.woff') format('woff'),
+  url('/assets/ballpark_weiner-webfont.ttf') format('truetype'),
+  url('/assets/ballpark_weiner-webfont.svg#BallparkWeiner') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bariol';
+  src: url('/assets/Bariol_Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   @include blueprint-utilities;
   @include blueprint-debug;
   @include blueprint-interaction;
+  background: url("/assets/black_linen_v2.png");
+  font-family: Bariol;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $header-background-color;
 }
 
 .wrap {
-    @include container;
+  @include container;
 }
 
 form {
@@ -21,44 +45,57 @@ form {
   @include blueprint-scaffolding;
 }
 
-hr { 
-    @include colspacer;
+header {
+  background-color: $header-background-color;
+  padding: 1.5em 0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.5);
+  border-bottom: 1px solid #CCC;
+  @include append-bottom;
+
+  #logo {
+    @include column(20);
+    h1 { margin: 0 }
+    font-family: BallparkWeiner;
+    font-size: 1.5em;
+    a {
+      color: $header-color;
+      text-decoration: none;
+    }
+  }
+
+  #masthead {
+    @include column(4);
+    @include last;
+  }
 }
 
-header {
-    background-color: $header-background-color;
-    padding: 1.5em 0;
-    @include append-bottom;
-
-    #logo {
-        @include column(20);
-        h1 { margin: 0 }
-        font-family: BallparkWeiner;
-        font-size: 1.5em;
-        a {
-            color: $header-color;
-            text-decoration: none;
-        }
+#app-list {
+  li.app {
+    list-style: none;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    font-size: 1.5em;
+    border-bottom: 4px solid $link-color;
+    &:hover {
+      border-color: $link-hover-color;
     }
-
-    #masthead {
-        @include column(4);
-        @include last;
+    &:focus {
+      border-color: $link-hover-color;
     }
+    a {
+      text-decoration: none;
+      padding: 5px;
+    }
+  }
 }
 
 footer {
-    @include column(24);
-    text-align: center;
+  @include column(24);
+  text-align: center;
+  color: $header-background-color;
+  margin-top: 100px;
 }
 
-@font-face {
-    font-family: 'BallparkWeiner';
-    src: url('/assets/ballpark_weiner-webfont.eot');
-    src: url('/assets/ballpark_weiner-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/assets/ballpark_weiner-webfont.woff') format('woff'),
-         url('/assets/ballpark_weiner-webfont.ttf') format('truetype'),
-         url('/assets/ballpark_weiner-webfont.svg#BallparkWeiner') format('svg');
-    font-weight: normal;
-    font-style: normal;
+section[role=main] {
+  margin: 10px auto;
 }
