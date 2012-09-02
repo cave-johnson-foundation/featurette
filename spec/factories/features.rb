@@ -5,6 +5,5 @@ FactoryGirl.define do
     current_amount 0
     goal 0
     app
-    user
   end
 end

@@ -1,8 +1,9 @@
 require 'spec_helper'
 
 describe User do
-  
+  it { should have_many :donations }
   it { should have_many :features }
+
 
   describe "find_or_create_with_omniauth" do
         let(:auth) {
@@ -17,6 +18,7 @@ describe User do
           }.to change(User, :count).by(1)
         end
       end
+
       describe "setting data on new user" do
         subject { User.find_or_create_with_omniauth(auth) }
 
@@ -28,18 +30,23 @@ describe User do
         it { subject.photo_url.should == "http://graph.facebook.com/lunks/picture?type=square" }
       end
     end
+
     context "user already exists" do
       let!(:existing_user) { FactoryGirl.create(:user, :name => "My old name", :email => "my@old.me", :provider => "facebook", :uid => "123456")}
+      
       describe "finding existing user" do
+
         it "should find" do
           User.find_or_create_with_omniauth(auth).should == existing_user
         end
+      
         it "should not create" do
           expect {
             User.find_or_create_with_omniauth(auth)
           }.to_not change(User, :count)
         end
       end
+
       describe "updating existing user" do
         before do
           User.find_or_create_with_omniauth(auth)

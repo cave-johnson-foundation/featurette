@@ -1,7 +1,7 @@
 describe FeaturesController do
   
   describe '#new' do
-    let(:diaroogle) { stub }
+    let(:diaroogle) { build :app }
 
     before do
       App.stub(:find).with('42').and_return diaroogle

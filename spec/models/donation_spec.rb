@@ -1,8 +1,9 @@
 describe Donation do
-  pending 'foo'
-  it { should validate_presence_of :amount }
   it { should belong_to :feature }
-  
+  it { should belong_to :user }
+
+  it { should validate_presence_of :amount }
+
   context "paying money to a feature" do
     subject(:donation) { build :donation, feature: create(:feature, goal: 300, state: :accepted) }
     

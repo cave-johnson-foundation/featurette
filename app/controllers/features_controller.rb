@@ -1,7 +1,7 @@
 class FeaturesController < ApplicationController
   def new
     @app = App.find params[:app_id]
-    @feature = Feature.new
+    @feature = Feature.new app: @app
   end
 
   def show
