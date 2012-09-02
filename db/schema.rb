@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120902091527) do
+ActiveRecord::Schema.define(:version => 20120902184317) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -60,6 +60,14 @@ ActiveRecord::Schema.define(:version => 20120902091527) do
     t.integer  "screenshot_file_size"
     t.datetime "screenshot_updated_at"
     t.text     "description"
+  end
+
+  create_table "contents", :force => true do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.text     "text"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "donations", :force => true do |t|
