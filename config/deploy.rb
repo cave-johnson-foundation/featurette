@@ -27,10 +27,12 @@ default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
+def current_user
+  capture("whoami").strip
+end
 def others_deploying?
   if 'true' == capture("if ls /tmp/deploying_* &> /dev/null; then echo 'true'; fi").strip
-    current_user = `whoami`.strip
-    if !('false' == capture("if [ -e /tmp/deploying_#{whoami}]; then echo 'false'; fi").strip)
+    if !('false' == capture("if [ -e /tmp/deploying_#{current_user}]; then echo 'false'; fi").strip)
       false
     else
       true
@@ -42,11 +44,9 @@ namespace :integrate do
     raise "Someone is currently deploying" if others_deploying?
   end
   task :lock do
-    current_user = `whoami`.strip
     run "touch /tmp/deploying_#{current_user}"
   end
   task :unlock do
-    current_user = `whoami`.strip
     run "rm /tmp/deploying_#{current_user}"
   end
 end
