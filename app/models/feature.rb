@@ -1,6 +1,12 @@
 class Feature < ActiveRecord::Base
-  attr_accessible :description, :current_amount, :goal
+  attr_accessible :name, :description, :current_amount, :goal
+
   belongs_to :app
+  has_many :donations
+
+  validates_presence_of :name
+  validates_presence_of :description
+  
   state_machine initial: :suggested do
     state :suggested
     state :accepted
@@ -9,6 +15,7 @@ class Feature < ActiveRecord::Base
       transition accepted: :financied
     end
   end
+
   def add_to_total_amount value
     update_attributes(current_amount: current_amount + value)
     if goal <= current_amount
