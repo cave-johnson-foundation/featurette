@@ -9,7 +9,7 @@
 - @app.features.each do |feature|
   %ul
     %li
-      = link_to "#{feature.description}", app_feature_path(@app, feature)
+      = link_to feature.description, app_feature_path(@app, feature)
 
 %footer
   = link_to 'Back', apps_path
