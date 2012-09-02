@@ -6,7 +6,7 @@ describe AppsController do
     let(:apps) { [diaroogle, twitter] }
 
     before do
-      App.stub(:all).and_return apps
+      App.stub(:scoped).and_return apps
       get :index
     end
 
