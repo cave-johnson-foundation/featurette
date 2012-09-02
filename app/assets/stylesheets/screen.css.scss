@@ -1,17 +1,8 @@
-@import "blueprint/reset";
+@import "partials/vars";
 @import "partials/base";
+@import "blueprint/reset";
 @import "blueprint";
 @import "blueprint/scaffolding";
-
-$font-color: #333333;
-$blueprint-background-color: #eeeeee;
-$blueprint-border-color: #dddddd;
-
-$link-color: #0066cc;
-$link-hover-color: #0099ff;
-$link-focus-color: $link-hover-color;
-$link-active-color: lighten(adjust-hue($link-color, 75deg), 10%);
-$link-visited-color: darken($link-color, 10%);
 
 @include blueprint;
 
@@ -21,7 +12,7 @@ body {
   @include blueprint-interaction;
 }
 
-#wrap {
+.wrap {
     @include container;
 }
 
@@ -30,12 +21,17 @@ form {
   @include blueprint-scaffolding;
 }
 
-hr {display: none}
+hr { 
+    @include colspacer;
+}
 
 header {
-    @include column(24);
-    padding: 20px 0;
+    background-color: $header-background-color;
+    padding: 1.5em 0;
+    @include append-bottom;
+
     #logo {
+        @include column(20);
         h1 { margin: 0 }
         font-family: BallparkWeiner;
         font-size: 1.5em;
@@ -46,7 +42,8 @@ header {
     }
 
     #masthead {
-        float: right;
+        @include column(4);
+        @include last;
     }
 }
 
@@ -54,7 +51,6 @@ footer {
     @include column(24);
     text-align: center;
 }
-
 
 @font-face {
     font-family: 'BallparkWeiner';
@@ -65,5 +61,4 @@ footer {
          url('/assets/ballpark_weiner-webfont.svg#BallparkWeiner') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }

@@ -33,17 +33,8 @@
       </script>
 
   %body{:id => controller.controller_name}
-    #wrap
-      %header
-        #masthead
-          - if current_user
-            %p
-              = "Bem-vindo <strong>#{current_user.name}</strong> &bull; ".html_safe
-              = link_to "Sair", logout_path
-          - else
-            %p
-              = link_to "Acesse com facebook", "/auth/facebook", :id => "facebook-connect"
-
+    %header
+      .wrap
         #logo<
           %h1
             = link_to "Featurette", root_url
@@ -54,15 +45,23 @@
         - if alert
           %p.alert
             = alert
+        #masthead
+          - if current_user
+            %p
+              = "Bem-vindo <strong>#{current_user.name}</strong> &bull; ".html_safe
+              = link_to "Sair", logout_path
+          - else
+            %p
+              = link_to "Acesse com facebook", "/auth/facebook", :id => "facebook-connect"
 
+    .wrap
       %hr
-      #container
-        %section{:role => "main"}
-          = yield
+      %section{:role => "main"}
+        = yield
 
-        - if content_for?(:sidebar)
-          %aside
-            = yield(:sidebar)
+      - if content_for?(:sidebar)
+        %aside
+          = yield(:sidebar)
       %hr
       %footer
         %p

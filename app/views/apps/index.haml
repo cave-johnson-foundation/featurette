@@ -12,10 +12,23 @@
 
 #feature-list
   %h2 Últimas features
-  %p
-    %img.user-avatar{:src => "/assets/pedro-avatar.png" }
-    <strong>Nome da feature</strong> sugerido por <strong>Usuário</strong>
-    %img.app-icon{:src => "/assets/sparkbox-icon.png" }
+  - 4.times do
+    .feature-suggestion
+      .app-icon
+        %img{:src => "/assets/sparkbox-icon.png" }
+      .feature-details
+        %p.feature-title
+          %strong Nome da feature
+          com
+          %strong R$ 9.999,00
+        %p
+          sugerido por
+          %strong Usuário
+          %img.user-avatar{:src => "/assets/pedro-avatar.png" }
+          por R$ 5,00
+        %p.date
+          1 Setembro 2012
+
 
 #app-list
   %h2 Apps

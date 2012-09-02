@@ -1,0 +1,17 @@
+$font-color: #333333;
+$blueprint-background-color: #eeeeee;
+$blueprint-border-color: #dddddd;
+
+$link-color: #0066cc;
+$link-hover-color: #0099ff;
+$link-focus-color: $link-hover-color;
+$link-active-color: lighten(adjust-hue($link-color, 75deg), 10%);
+$link-visited-color: darken($link-color, 10%);
+
+$app-icon-size: 56px;
+$user-avatar-size: 16px;
+
+$feature-background: #dedede;
+$feature-background-hover: #a6a6a6;
+
+$header-background-color: #dedede;
