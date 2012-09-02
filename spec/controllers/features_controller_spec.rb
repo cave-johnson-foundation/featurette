@@ -32,7 +32,6 @@ describe FeaturesController do
       app_id: app.id
     }}
 
-
     before do
       session[:user_id] = user.id
       post :create, app_id: app.id, feature: params
