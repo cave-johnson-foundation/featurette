@@ -37,8 +37,7 @@
 #app-list
   %h2 Apps
   %ul
-  - @apps.each do |app|
-    %li.app
-      = link_to app.name, app
-      .logo.logo-small
-        = image_tag app.logo.url(:thumb)
+    - @apps.each do |app|
+      %li.app
+        .logo.logo-xbig
+          = link_to image_tag(app.logo.url(:thumb)), app

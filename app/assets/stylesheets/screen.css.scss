@@ -74,7 +74,7 @@ header {
   }
 }
 
-li.app, li.feature {
+li.feature {
   list-style: none;
   margin-top: 5px;
   padding-bottom: 5px;
@@ -93,8 +93,19 @@ li.app, li.feature {
 }
 
 #app-list {
+  h2 {
+    margin-bottom: 10px;
+  }
+  ul {
+    margin: 0;
+    padding-left: 0;
+  }
+  li {
+    list-style: none;
+  }
   .logo {
-    float: right;
+    float: left;
+    margin: 20px 20px  0 0;
   }
 }
 
@@ -103,6 +114,16 @@ li.app, li.feature {
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
   img {
     border: 1px solid gray;
+  }
+}
+
+.logo-small {
+  padding: 1px;
+  width: 28px;
+  height: 28px;
+  img {
+    width: 26px;
+    height: 26px;
   }
 }
 
@@ -116,13 +137,13 @@ li.app, li.feature {
   }
 }
 
-.logo-small {
-  padding: 1px;
-  width: 28px;
-  height: 28px;
+.logo-xbig {
+  padding: 3px;
+  width: 102px;
+  height: 102px;
   img {
-    width: 26px;
-    height: 26px;
+    width: 100px;
+    height: 100px;
   }
 }
 
