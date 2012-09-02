@@ -10,11 +10,11 @@ describe Feature do
 
   describe '#receive' do
     let(:ten_bucks) { build(:donation, amount: 10.0) }
-    
+
     before do
       2.times { subject.receive ten_bucks }
     end
-    
+
     its(:current_amount) { should eq 20.0 }
   end
 
@@ -24,7 +24,7 @@ describe Feature do
     context 'for an existing feature' do
       let(:first) { build(:donation, user: author) }
       let(:second) { build(:donation) }
-      
+
       before do
         [first, second].each do |donation|
           subject.receive donation
