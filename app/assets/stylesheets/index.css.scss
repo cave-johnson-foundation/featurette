@@ -9,3 +9,17 @@ $feature-suggestion-height: 6em;
   @include last;
 }
 
+.login-button {
+  width: 150px;
+  height: 22px;
+  background: url("facebook_signin.png");
+  &:hover {
+    background-position-y: -24px;
+  }
+  &:active {
+    background-position-y: -48px;
+  }
+  a#facebook-connect {
+    color: transparent;
+  }
+}
