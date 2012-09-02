@@ -10,7 +10,15 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 
-  %h2 Apps
-- @apps.each do |app|
+#feature-list
+  %h2 Últimas features
   %p
-    = link_to app.name, app
+    %img.user-avatar{:src => "/assets/pedro-avatar.png" }
+    <strong>Nome da feature</strong> sugerido por <strong>Usuário</strong>
+    %img.app-icon{:src => "/assets/sparkbox-icon.png" }
+
+#app-list
+  %h2 Apps
+  - @apps.each do |app|
+    %p
+      = link_to app.name, app

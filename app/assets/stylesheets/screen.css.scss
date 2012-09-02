@@ -3,19 +3,67 @@
 @import "blueprint";
 @import "blueprint/scaffolding";
 
-// To generate css equivalent to the blueprint css but with your
-// configuration applied, uncomment:
-// @include blueprint
+$font-color: #333333;
+$blueprint-background-color: #eeeeee;
+$blueprint-border-color: #dddddd;
+
+$link-color: #0066cc;
+$link-hover-color: #0099ff;
+$link-focus-color: $link-hover-color;
+$link-active-color: lighten(adjust-hue($link-color, 75deg), 10%);
+$link-visited-color: darken($link-color, 10%);
+
+@include blueprint;
 
 body {
-  @include blueprint-typography(true);
   @include blueprint-utilities;
   @include blueprint-debug;
   @include blueprint-interaction;
 }
 
+#wrap {
+    @include container;
+}
+
 form {
   @include blueprint-form;
-  // You'll probably want to remove the scaffolding once you start styling your site.
   @include blueprint-scaffolding;
+}
+
+hr {display: none}
+
+header {
+    @include column(24);
+    padding: 20px 0;
+    #logo {
+        h1 { margin: 0 }
+        font-family: BallparkWeiner;
+        font-size: 1.5em;
+        a {
+            color: $header-color;
+            text-decoration: none;
+        }
+    }
+
+    #masthead {
+        float: right;
+    }
+}
+
+footer {
+    @include column(24);
+    text-align: center;
+}
+
+
+@font-face {
+    font-family: 'BallparkWeiner';
+    src: url('/assets/ballpark_weiner-webfont.eot');
+    src: url('/assets/ballpark_weiner-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/ballpark_weiner-webfont.woff') format('woff'),
+         url('/assets/ballpark_weiner-webfont.ttf') format('truetype'),
+         url('/assets/ballpark_weiner-webfont.svg#BallparkWeiner') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }

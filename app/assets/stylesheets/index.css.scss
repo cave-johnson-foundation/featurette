@@ -1,0 +1,15 @@
+@import "blueprint/grid";
+
+#app-list {
+    @include column(12);
+}
+
+#feature-list {
+    @include column(12);
+    @include last;
+
+    img {
+        width: 36px;
+        height: 36px;
+    }
+}
