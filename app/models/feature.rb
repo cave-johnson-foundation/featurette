@@ -16,6 +16,14 @@ class Feature < ActiveRecord::Base
     end
   end
 
+  def receive donation
+    donations << donation
+  end
+
+  def current_amount
+    donations.map(&:amount).reduce(&:+)
+  end
+
   def add_to_total_amount value
     update_attributes(current_amount: current_amount + value)
     if goal <= current_amount

@@ -1,11 +1,9 @@
 FactoryGirl.define do
   factory :feature do
-    description "Make Coffee"
+    name 'show me naked chicks'
+    description 'can you show me them?'
     current_amount 0
     goal 0
     app
-    after_build do |feature|
-      feature.donations << FactoryGirl.build(:donation, feature: feature)
-    end
   end
 end

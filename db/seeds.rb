@@ -11,13 +11,3 @@ apps = App.create([
   { name: 'Twitter', url: 'http://www.twitter.com' },
   { name: 'Github', url: 'http://www.github.com' } 
 ])
-
-apps.each do |app|
-  Feature.create([
-    { description: 'Play Tetris' },
-    { description: 'Show Naked Chicks' }
-  ]).each do |f|
-    app.features << f
-  end
-  app.save
-end
