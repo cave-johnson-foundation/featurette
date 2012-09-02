@@ -1,6 +1,6 @@
 class Donation < ActiveRecord::Base
   attr_accessible :amount, :user, :user_id
-  scope :latest, limit(5).order("updated_at desc")
+  scope :latest, limit(5).order("updated_at desc").includes(:feature => :app).includes(:user)
 
   belongs_to :user
   belongs_to :feature
