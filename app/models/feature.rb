@@ -28,9 +28,9 @@ class Feature < ActiveRecord::Base
   def first_donation
     unless donations.empty?
       donations.find { |d| d.user == user }
-    else  
+    else
       Donation.new(user: user, amount: 0.0)
-    end  
+    end
   end
 
   # acho que nao precisa

@@ -6,7 +6,7 @@ describe Donation do
 
   context "paying money to a feature" do
     subject(:donation) { build :donation, feature: create(:feature, goal: 300, state: :accepted) }
-    
+
     it "sets feature to financied" do
     pending 'bla'
       donation.amount = 300

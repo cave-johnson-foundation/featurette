@@ -5,7 +5,7 @@ class Donation < ActiveRecord::Base
   belongs_to :feature
 
   validates_presence_of :amount
-  
+
   #before_save :add_amount_to_feature
 
   # private
