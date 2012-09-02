@@ -45,6 +45,10 @@ form {
   @include blueprint-scaffolding;
 }
 
+section[role=main] {
+  margin: 10px auto;
+}
+
 header {
   background-color: $header-background-color;
   padding: 1.5em 0;
@@ -69,22 +73,83 @@ header {
   }
 }
 
+li.app, li.feature {
+  list-style: none;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  width: 300px;
+  font-size: 1.5em;
+  border-bottom: 4px solid $link-color;
+  &:hover {
+    border-color: $link-hover-color;
+  }
+  &:focus {
+    border-color: $link-hover-color;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
 #app-list {
-  li.app {
-    list-style: none;
-    margin-top: 5px;
-    padding-bottom: 5px;
-    font-size: 1.5em;
-    border-bottom: 4px solid $link-color;
-    &:hover {
-      border-color: $link-hover-color;
+  .logo {
+    float: right;
+  }
+}
+
+.logo {
+  background: whiteSmoke;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+.logo-big {
+  padding: 3px;
+  width: 50px;
+  height: 50px;
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.logo-small {
+  padding: 1px;
+  width: 27px;
+  height: 27px;
+  img {
+    width: 27px;
+    height: 27px;
+  }
+}
+
+#app {
+  section[role=header] {
+    .title {
+      padding: 10px 0 0 70px;
     }
-    &:focus {
-      border-color: $link-hover-color;
+    .logo {
+      float: left;
     }
-    a {
-      text-decoration: none;
-      padding: 5px;
+  }
+  section[role=content] {
+    margin-top: 30px;
+    .description {
+      float: right;
+      width: 250px;
+      .text {
+        color: $header-background-color;
+        font-size: 2em;
+      }
+      .screen-shot img {
+        width: 250px;
+        height: 250px;
+      }
+    }
+    .features {
+      .title {
+        font-size: 2em;
+        padding: 0;
+      }
     }
   }
 }
@@ -94,8 +159,4 @@ footer {
   text-align: center;
   color: $header-background-color;
   margin-top: 100px;
-}
-
-section[role=main] {
-  margin: 10px auto;
 }

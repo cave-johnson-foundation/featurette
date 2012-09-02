@@ -1,17 +1,24 @@
-%h2
-  = @app.name
-= image_tag @app.logo.url(:medium)
+#app
+  %section{:role => "header"}
+    .logo.logo-big
+      = image_tag @app.logo.url(:medium)
+    %h2.title
+      = @app.name
+      = link_to @app.url
+  %section{:role => "content"}
+    .description
+      .screen-shot
+        = image_tag @app.screenshot.url(:medium)
+      .text
+        = @app.description
 
-%p
-  = link_to @app.url
-  = @app.description
-  = image_tag @app.screenshot.url(:medium)
+    .features
+      %h3.title Features
 
-%h3 Features
-- @app.features.each do |feature|
-  %ul
-    %li
-      = link_to feature.description, app_feature_path(@app, feature)
+      %ul
+      - @app.features.each do |feature|
+        %li.feature
+          = link_to feature.description, app_feature_path(@app, feature)
 
-%footer
-  = link_to 'Back', apps_path
+  %footer
+    = link_to 'Back', apps_path

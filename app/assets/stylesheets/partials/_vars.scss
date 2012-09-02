@@ -2,8 +2,8 @@ $font-color: #333333;
 $blueprint-background-color: #eeeeee;
 $blueprint-border-color: #dddddd;
 
-$link-color: #0066cc;
-$link-hover-color: #0099ff;
+$link-color: #51A8FF;
+$link-hover-color: lighten($link-color, 10%);
 $link-focus-color: $link-hover-color;
 $link-active-color: lighten(adjust-hue($link-color, 75deg), 10%);
 $link-visited-color: darken($link-color, 10%);

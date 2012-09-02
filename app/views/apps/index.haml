@@ -40,3 +40,5 @@
   - @apps.each do |app|
     %li.app
       = link_to app.name, app
+      .logo.logo-small
+        = image_tag app.logo.url(:medium)
