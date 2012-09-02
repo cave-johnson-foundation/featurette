@@ -1,0 +1,18 @@
+%h1 Offer your donation for this idea!
+= form_for([@donation.feature.app, @donation.feature, @donation]) do |f|
+  - if @fdonation.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@donation.errors.count, 'error') 
+        Not saved!
+      %ul
+        - @donation.errors.full_messages.each do |msg|
+          %li
+            = msg
+  .field
+    = f.label :amount
+    = f.text_field :amount
+    = f.submit 'Donate!'
+
+  = f.hidden_field :feature_id
+  = f.hidden_field :user_id
