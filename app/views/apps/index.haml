@@ -11,23 +11,27 @@
     }(document, 'script', 'facebook-jssdk'));</script>
 
 #feature-list
-  %h2 Últimas features
-  - 4.times do
+  %h2 Latest donations
+  - @latest_donations.each do |donation|
     .feature-suggestion
       .app-icon
         %img{:src => "/assets/sparkbox-icon.png" }
       .feature-details
         %p.feature-title
-          %strong Nome da feature
-          com
-          %strong R$ 9.999,00
+          %strong
+            = donation.feature.name
+          with
+          %strong
+            = "R$ #{donation.amount}"
         %p
-          sugerido por
-          %strong Usuário
-          %img.user-avatar{:src => "/assets/pedro-avatar.png" }
-          por R$ 5,00
+          suggested by
+          %strong
+            = donation.user.name
+          = image_tag donation.user.photo_url, class: "user-avatar"
+          for
+          = "R$ #{donation.feature.current_amount}"
         %p.date
-          1 Setembro 2012
+          = "#{time_ago_in_words donation.created_at} ago"
 
 
 #app-list
