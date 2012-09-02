@@ -1,5 +1,5 @@
 class Feature < ActiveRecord::Base
-  attr_accessible :name, :description, :current_amount, :goal
+  attr_accessible :name, :description, :current_amount, :goal, :app
 
   belongs_to :app
   belongs_to :user

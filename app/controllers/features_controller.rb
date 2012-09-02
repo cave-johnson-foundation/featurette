@@ -1,4 +1,9 @@
 class FeaturesController < ApplicationController
+  def new
+    @app = App.find params[:app_id]
+    @feature = Feature.new
+  end
+
   def show
     @feature = Feature.find(params[:id])
   end
