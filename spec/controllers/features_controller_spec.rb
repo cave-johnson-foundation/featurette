@@ -25,7 +25,11 @@ describe FeaturesController do
   end
 
   describe '#create' do
-    let(:params) { { name: 'Free Access', description: 'No bills.' } }
+    let(:params) {{ 
+      name: 'Free Access', 
+      description: 'No bills.',
+      app_id: app.id
+    }}
 
     before do
       post :create, app_id: app.id, feature: params

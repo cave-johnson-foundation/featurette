@@ -1,5 +1,5 @@
 class Feature < ActiveRecord::Base
-  attr_accessible :app, :user, :name, :description, :current_amount, :user_id
+  attr_accessible :app, :user, :name, :description, :current_amount, :app_id, :user_id
 
   belongs_to :app
   belongs_to :user
@@ -27,7 +27,7 @@ class Feature < ActiveRecord::Base
   end
 
   def current_amount
-    donations.map(&:amount).reduce(&:+)
+    donations.map(&:amount).reduce(&:+) || 0
   end
 
   def succeeded?

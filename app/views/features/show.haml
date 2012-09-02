@@ -1,2 +1,24 @@
-%h2
-  = "id: #{@feature.id} - #{@feature.description}"
+#top
+  %h1
+    %stong
+      = @feature.name
+  
+  %h2 
+    %span for
+    %storng
+      = @feature.app.name
+
+#info
+  %ul
+    %li
+      = "Suggested by: #{@feature.user.name}"
+      %img{ src: "#{@feature.user.photo_url}" }
+    %li
+      = "Status: #{@feature.state}"
+    %li
+      = "Total offered so far: #{@feature.current_amount}"
+
+%article
+  %p
+    = @feature.description
+

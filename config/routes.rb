@@ -8,7 +8,9 @@ CaveJohnsonFoundation::Application.routes.draw do
   match "/logout" => "sessions#destroy", :as => :logout
 
   resources :apps do
-    resources :features
+    resources :features do
+      resources :donations
+    end
   end
 
 

@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(:version => 20120902091527) do
   add_index "donations", ["feature_id"], :name => "index_donations_on_feature_id"
 
   create_table "features", :force => true do |t|
-    t.string   "description"
+    t.text     "description"
     t.integer  "app_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
