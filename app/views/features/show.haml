@@ -13,10 +13,8 @@
 #feature-state
   #donate
     = link_to 'Donate!', new_app_feature_donation_path(@feature.app, @feature)
-  %div
-    = "Status: #{@feature.state}"
-  %div
-    = "$#{@feature.current_amount} raised"
+  .status
+    = render @feature.state, feature: @feature
 
 #user-info
   #user-pic
