@@ -1,3 +1,4 @@
+@import "compass/css3/border-radius";
 @import "partials/vars";
 @import "partials/base";
 @import "blueprint/reset";
@@ -23,6 +24,14 @@
   font-weight: normal;
   font-style: normal;
 }
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 
 body {
   @include blueprint-utilities;
@@ -94,19 +103,9 @@ header {
     padding-left: 0;
   }
   li {
+    @include column(3);
     list-style: none;
-  }
-  .logo {
-    float: left;
-    margin: 20px 20px  0 0;
-  }
-}
-
-.logo {
-  background: whiteSmoke;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
-  img {
-    border: 1px solid gray;
+    text-align: center;
   }
 }
 
@@ -131,12 +130,9 @@ header {
 }
 
 .logo-xbig {
-  padding: 3px;
-  width: 102px;
-  height: 102px;
   img {
-    width: 100px;
-    height: 100px;
+    width: span(3) - 30px;
+    height: span(3) - 30px;
   }
 }
 
