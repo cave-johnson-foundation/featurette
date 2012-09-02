@@ -48,11 +48,14 @@
         #masthead
           - if current_user
             %p
-              = "Bem-vindo <strong>#{current_user.name}</strong> &bull; ".html_safe
-              = link_to "Sair", logout_path
+              Welcome
+              %strong
+                = current_user.name
+              &bull;
+              = link_to "Logout", logout_path
           - else
             %p
-              = link_to "Acesse com facebook", "/auth/facebook", :id => "facebook-connect"
+              = link_to "Acess with Facebook", "/auth/facebook", :id => "facebook-connect"
 
     .wrap
       %hr
