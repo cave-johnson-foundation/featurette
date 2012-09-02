@@ -1,65 +1,133 @@
 @import "blueprint";
+@import "compass/css3/border-radius";
+@import "partials/vars";
 
 @include blueprint-form;
 
+#feature-list {
+  @include column(12);
+
+  .feature-suggestion {
+    @include column(11);
+    @include append-bottom;
+    @include border-radius(2px);
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-right: $blueprint-grid-margin;
+    background: $feature-background;
+    color: #555;
+    p {
+      margin-bottom: 0em;
+    }
+    img.user-avatar {
+      width: $user-avatar-size;
+      height: $user-avatar-size;
+      vertical-align: middle;
+    }
+    .feature-title {
+      font-size: 1.75em;
+      margin: 0.125em 0;
+    }
+    .date {
+      text-align: right;
+      color: $quiet-color;
+    }
+    .app-icon {
+      @include column(2);
+      text-align: center;
+      margin-top: 0.125em;
+      img {
+        width: $app-icon-size;
+        height: $app-icon-size;
+      }
+    }
+    .feature-details {
+      @include column(9);
+      @include last;
+    }
+  }
+  .feature-suggestion:hover {
+    cursor: pointer;
+    background: $feature-background-hover;
+  }
+}
+
 #add-feature {
-    label {
-        display: block;
-        color: #ccc;
-    }
+  label {
+    display: block;
+    color: #ccc;
+  }
 
-    input, textarea {
-        width: span(12);
-    }
+  input, textarea {
+    width: span(12);
+  }
 
-    input[type=submit] {
-        @include column(4);
-        @include push(8);
-    }
+  input[type=submit] {
+    @include column(4);
+    @include push(8);
+  }
 
-    #feature_name {
-        font-size: 1.5em;
-    }
+  #feature_name {
+    font-size: 1.5em;
+  }
 }
 
 #top {
-    @include column(16);
-    @include append-bottom(3em);
+  @include column(16);
+  @include append-bottom(3em);
 
-    #app-logo {
-        @include column(3);
-        img {
-            width: span(3);
-            height: span(3);
-        }
+  #app-logo {
+    @include column(3);
+    img {
+      width: span(3);
+      height: span(3);
     }
+  }
 }
 
 #user-info {
-    @include column(24);
-    @include append-bottom;
-    
-    #user-pic {
-        img {
-            @include column(1);
-            width: span(1);
-            height: span(1);
-        }
+  @include column(24);
+  @include append-bottom;
+
+  #user-pic {
+    img {
+      @include column(1);
+      width: span(1);
+      height: span(1);
     }
+  }
 }
 
 #feature-state {
-    @include column(4);
-    font-size: 1.5em;
-    text-align: right;
-    list-style: none;
+  @include column(4);
+  font-size: 1.5em;
+  text-align: right;
+  list-style: none;
 }
 
 #donate {
-    font-size: 2em;
+  font-size: 2em;
 }
 
 .feature-description {
-    font-size: 1.25em;
-    @include column(12);
+  font-size: 1.25em;
+  @include column(12);
+}
+
+li.feature {
+  list-style: none;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  width: 300px;
+  font-size: 1.5em;
+  border-bottom: 4px solid $link-color;
+  &:hover {
+    border-color: $link-hover-color;
+  }
+  &:focus {
+    border-color: $link-hover-color;
+  }
+  a {
+    text-decoration: none;
+  }
 }

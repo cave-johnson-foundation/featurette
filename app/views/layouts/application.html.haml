@@ -40,12 +40,6 @@
           %h1
             = link_to "Featurette", root_url
 
-        - if notice
-          %p.notice
-            = notice
-        - if alert
-          %p.alert
-            = alert
         #masthead
           - if current_user
             %p
@@ -57,6 +51,14 @@
           - else
             %p
               = link_to "Access with Facebook", "/auth/facebook", :id => "facebook-connect"
+
+    .messages
+      - if notice
+        %p.notice
+          = notice
+      - if alert
+        %p.alert
+          = alert
 
     .wrap
       .content

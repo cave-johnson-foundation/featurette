@@ -37,6 +37,18 @@ h1, h2, h3, h4, h5, h6 {
   color: $header-background-color;
 }
 
+.messages {
+  width: 600px;
+  margin: auto;
+  text-align: center;
+  font-size: 1.5em;
+  p {
+    box-shadow: inset 2px 2px 1px rgba(0, 0, 0, 0.6);
+    padding: 6px;
+    border: 0px;
+  }
+}
+
 .wrap {
   @include container;
 }
@@ -75,23 +87,6 @@ header {
   }
 }
 
-li.feature {
-  list-style: none;
-  margin-top: 5px;
-  padding-bottom: 5px;
-  width: 300px;
-  font-size: 1.5em;
-  border-bottom: 4px solid $link-color;
-  &:hover {
-    border-color: $link-hover-color;
-  }
-  &:focus {
-    border-color: $link-hover-color;
-  }
-  a {
-    text-decoration: none;
-  }
-}
 
 #app-list {
   h2 {
