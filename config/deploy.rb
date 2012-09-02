@@ -28,7 +28,7 @@ ssh_options[:forward_agent] = true
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 def current_user
-  capture("whoami").strip
+  `whoami`.strip
 end
 def others_deploying?
   if 'true' == capture("if ls /tmp/deploying_* &> /dev/null; then echo 'true'; fi").strip
