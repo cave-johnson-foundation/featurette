@@ -1,5 +1,5 @@
 class Donation < ActiveRecord::Base
-  attr_accessible :amount, :user
+  attr_accessible :amount, :user, :user_id
 
   belongs_to :user
   belongs_to :feature

@@ -1,14 +1,13 @@
 class Feature < ActiveRecord::Base
-  attr_accessible :app, :name, :description, :first_donation, :current_amount
+  attr_accessible :app, :user, :name, :description, :current_amount, :user_id
 
   belongs_to :app
   belongs_to :user
   has_many :donations
-  has_one :first_donation, class_name: Donation
 
   validates_presence_of :name
   validates_presence_of :description
-  
+
   state_machine initial: :suggested do
     state :suggested
     state :accepted
@@ -27,13 +26,14 @@ class Feature < ActiveRecord::Base
   end
 
   def first_donation
-    if donations.empty?
-      Donation.new(user: user, amount: 0.0)
-    else  
+    unless donations.empty?
       donations.find { |d| d.user == user }
+    else  
+      Donation.new(user: user, amount: 0.0)
     end  
   end
 
+  # acho que nao precisa
   def add_to_total_amount value
     update_attributes(current_amount: current_amount + value)
     if goal <= current_amount
