@@ -11,6 +11,7 @@ gem 'state_machine'
 gem 'omniauth-facebook'
 gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
+gem 'paperclip'
 
 # gem 'paperclip', '3.0.4'
 # gem 'aws-sdk', '1.5.2'
