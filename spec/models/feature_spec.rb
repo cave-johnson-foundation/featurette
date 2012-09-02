@@ -19,28 +19,4 @@ describe Feature do
     its(:current_amount) { should eq 20.0 }
     it {should be_financied}
   end
-
-  describe '#first_donation' do
-    let(:author) { subject.user }
-
-    context 'for an existing feature' do
-      let(:first) { build(:donation, user: author) }
-      let(:second) { build(:donation) }
-
-      before do
-        [first, second].each do |donation|
-          subject.receive donation
-        end
-      end
-
-      its(:first_donation) { should eq first }
-    end
-
-    context 'for a brand new feature' do
-      it 'should initialize an empty donation for the author' do
-        subject.first_donation.user.should eq author
-        subject.first_donation.amount.should eq 0.0
-      end
-    end
-  end
 end
