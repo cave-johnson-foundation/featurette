@@ -58,9 +58,9 @@
               = link_to "Access with Facebook", "/auth/facebook", :id => "facebook-connect"
 
     .wrap
-      %hr
-      #h2
-        = c :home_content, default: "Home content"
+      .content
+        %h2
+          = c :home_content, default: "Home content"
 
       %section{:role => "main"}
         = yield
