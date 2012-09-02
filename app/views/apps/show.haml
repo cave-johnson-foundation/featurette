@@ -13,12 +13,15 @@
         = @app.description
 
     .features
-      %h3.title Features
+      %h3.title Desired Features
+
+      %h4
+        = link_to 'Suggest new feature now!', new_app_feature_path(@app)
 
       %ul
       - @app.features.each do |feature|
         %li.feature
-          = link_to feature.description, app_feature_path(@app, feature)
+          = link_to feature.name, app_feature_path(@app, feature)
 
   %footer
     = link_to 'Back', apps_path
