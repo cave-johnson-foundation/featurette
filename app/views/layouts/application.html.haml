@@ -58,6 +58,10 @@
               = link_to "Access with Facebook", "/auth/facebook", :id => "facebook-connect"
 
     .wrap
+      %hr
+      #h2
+        = c :home_content, default: "Home content"
+
       %section{:role => "main"}
         = yield
 
@@ -67,4 +71,3 @@
       %footer
         %p
           = "Copyright &copy; 2012 Cave Johnson - We use Sendgrid!".html_safe
-          
