@@ -1,4 +1,5 @@
 class FeaturesController < ApplicationController
+  before_filter :authenticate!, only: :update
   def new
     app = App.find params[:app_id]
     @feature = Feature.new(app: app, user: current_user)
@@ -25,9 +26,11 @@ class FeaturesController < ApplicationController
   def update
     app = App.find params[:app_id]
     @feature = Feature.find(params[:id])
-    @feature.receive Donation.new(params[:amount])
+    donation = Donation.new(params[:amount])
+    @feature.receive donation
     respond_to do |format|
       if @feature.save
+        Notifier.delay.donated(donation.id, current_user.id)
         format.html { redirect_to app_feature_path(app, @feature), notice: 'Donation received!' }
         format.json { head :no_content }
       else
