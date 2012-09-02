@@ -1,14 +1,14 @@
 #app
   %section{:role => "header"}
     .logo.logo-big
-      = image_tag @app.logo.url(:medium)
+      = image_tag @app.logo.url(:thumb)
     %h2.title
       = @app.name
       = link_to @app.url
   %section{:role => "content"}
     .description
       .screen-shot
-        = image_tag @app.screenshot.url(:medium)
+        = image_tag @app.screenshot.url(:large)
       .text
         = @app.description
 

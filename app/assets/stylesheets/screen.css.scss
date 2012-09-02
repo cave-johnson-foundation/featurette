@@ -139,14 +139,13 @@ li.app, li.feature {
     margin-top: 30px;
     .description {
       float: right;
-      width: 250px;
+      width: 500px;
       .text {
         color: $header-background-color;
         font-size: 2em;
       }
       .screen-shot img {
-        width: 250px;
-        height: 250px;
+        width: 500px;
       }
     }
     .features {
