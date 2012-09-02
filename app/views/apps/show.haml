@@ -1,9 +1,11 @@
 %h2
   = @app.name
+= image_tag @app.logo.url(:medium)
 
 %p
-  %a{ href: "#{@app.url}" }
-    = @app.url
+  = link_to @app.url
+  = @app.description
+  = image_tag @app.screenshot.url(:medium)
 
 %h3 Features
 - @app.features.each do |feature|
