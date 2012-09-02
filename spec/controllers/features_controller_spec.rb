@@ -1,6 +1,6 @@
 describe FeaturesController do
   let(:app) { create :app }
-  
+
   describe '#new' do
     before { get :new, app_id: app.id }
 
@@ -26,8 +26,8 @@ describe FeaturesController do
 
   describe '#create' do
     let(:user) { create :user }
-    let(:params) {{ 
-      name: 'Free Access', 
+    let(:params) {{
+      name: 'Free Access',
       description: 'No bills.',
       app_id: app.id
     }}
@@ -38,7 +38,7 @@ describe FeaturesController do
     end
 
     it { should respond_with(302) }
-    it { should redirect_to action: :show, id: assigns(:feature).id }
-    it { should set_the_flash.to('Feature suggested!') }
+    it { should redirect_to new_app_feature_donation_path(app, assigns(:feature)) }
+    it { should set_the_flash.to('Feature suggested! Now offer some money to it!') }
   end
 end

@@ -14,7 +14,7 @@ class FeaturesController < ApplicationController
     @feature = Feature.new(params[:feature])
     respond_to do |format|
       if @feature.save
-        format.html { redirect_to app_feature_path(@feature.app, @feature), notice: 'Feature suggested!' }
+        format.html { redirect_to new_app_feature_donation_path(@feature.app, @feature), notice: 'Feature suggested! Now offer some money to it!' }
         format.json { render json: @feature, status: :created, location: @feature }
       else
         format.html { render action: "new" }
