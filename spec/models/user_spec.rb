@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe User do
+  
+  it { should have_many :features }
+
   describe "find_or_create_with_omniauth" do
         let(:auth) {
           {"provider"=>"facebook","uid"=>"123456","credentials"=> {"token"=>"MAOEEE"},"info"=>{"nickname"=>"lunks","email"=>"pnascimento@gmail.com","first_name"=>"Pedro","last_name"=>"Nascimento","name"=>"Pedro Nascimento","image"=>"http://graph.facebook.com/lunks/picture?type=square","urls"=>{"Facebook"=>"http://www.facebook.com/lunks", "Website"=>nil}}, "extra"=>{"user_hash"=>{"id"=>"750580364", "name"=>"Pedro Nascimento", "first_name"=>"Pedro", "last_name"=>"Nascimento", "link"=>"http://www.facebook.com/lunks", "username"=>"lunks","location"=>{"id"=>"110346955653479", "name"=>"Rio de Janeiro, Rio de Janeiro"}}}, "gender"=>"male", "email"=>"pnascimento@gmail.com", "timezone"=>-3, "locale"=>"pt_BR", "verified"=>true, "updated_time"=>"2012-09-01T00:04:30+0000"}}

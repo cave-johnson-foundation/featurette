@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120902005642) do
+ActiveRecord::Schema.define(:version => 20120902013107) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20120902005642) do
     t.decimal  "goal"
     t.decimal  "current_amount"
     t.string   "name"
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|

@@ -2,6 +2,7 @@ class Feature < ActiveRecord::Base
   attr_accessible :name, :description, :current_amount, :goal
 
   belongs_to :app
+  belongs_to :user
   has_many :donations
 
   validates_presence_of :name
