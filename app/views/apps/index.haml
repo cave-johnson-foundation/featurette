@@ -14,8 +14,8 @@
   %h2 Latest donations
   - @latest_donations.each do |donation|
     .feature-suggestion
-      .app-icon
-        %img{:src => "/assets/sparkbox-icon.png" }
+      .app-icon.logo.logo-big
+        %img{:src => donation.feature.app.logo.url(:thumb)}
       .feature-details
         %p.feature-title
           %strong

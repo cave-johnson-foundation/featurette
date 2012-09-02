@@ -11,10 +11,9 @@
     @include column(11);
     @include append-bottom;
     @include border-radius(2px);
-    padding-top: 1em;
-    padding-bottom: 1em;
-    padding-right: $blueprint-grid-margin;
+    padding: 10px;
     background: $feature-background;
+    margin: 20px 20px 0 0;
     color: #555;
     p {
       margin-bottom: 0em;
@@ -33,13 +32,8 @@
       color: $quiet-color;
     }
     .app-icon {
-      @include column(2);
-      text-align: center;
-      margin-top: 0.125em;
-      img {
-        width: $app-icon-size;
-        height: $app-icon-size;
-      }
+      float: left;
+      margin-right: 10px;
     }
     .feature-details {
       @include column(9);
