@@ -11,3 +11,9 @@
  *= require_self
  *= require_tree .
 */
+
+#twitter {
+  float: right;
+  width: 156px;
+  margin-right: 90px;
+}
