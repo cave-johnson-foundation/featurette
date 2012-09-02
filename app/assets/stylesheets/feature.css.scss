@@ -1,0 +1,23 @@
+@import "blueprint";
+
+@include blueprint-form;
+
+#add-feature {
+    label {
+        display: block;
+        color: #ccc;
+    }
+
+    input, textarea {
+        width: span(12);
+    }
+
+    input[type=submit] {
+        @include column(4);
+        @include push(8);
+    }
+
+    #feature_name {
+        font-size: 1.5em;
+    }
+}
