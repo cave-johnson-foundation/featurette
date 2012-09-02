@@ -25,12 +25,4 @@ class Feature < ActiveRecord::Base
   def current_amount
     donations.map(&:amount).reduce(&:+)
   end
-
-  def first_donation
-    unless donations.empty?
-      donations.find { |d| d.user == user }
-    else
-      Donation.new(user: user, amount: 0.0)
-    end
-  end
 end
