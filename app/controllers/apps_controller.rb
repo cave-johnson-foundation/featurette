@@ -1,6 +1,6 @@
 class AppsController < ApplicationController
   def index
-    @apps = App.all
+    @apps = App.scoped
   end
 
   def show
