@@ -21,3 +21,45 @@
         font-size: 1.5em;
     }
 }
+
+#top {
+    @include column(16);
+    @include append-bottom(3em);
+
+    #app-logo {
+        @include column(3);
+        img {
+            width: span(3);
+            height: span(3);
+        }
+    }
+}
+
+#user-info {
+    @include column(24);
+    @include append-bottom;
+    
+    #user-pic {
+        img {
+            @include column(1);
+            width: span(1);
+            height: span(1);
+        }
+    }
+}
+
+#feature-state {
+    @include column(4);
+    font-size: 1.5em;
+    text-align: right;
+    list-style: none;
+}
+
+#donate {
+    font-size: 2em;
+}
+
+.feature-description {
+    font-size: 1.25em;
+    @include column(12);
+}

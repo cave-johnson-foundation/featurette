@@ -1,4 +1,6 @@
 #top
+  #app-logo
+    = image_tag @feature.app.logo.url
   %h1
     %stong
       = @feature.name
@@ -8,19 +10,21 @@
     %storng
       = @feature.app.name
 
-#info
-  %ul
-    %li
-      = "Suggested by: #{@feature.user.name}"
-      %img{ src: "#{@feature.user.photo_url}" }
-    %li
-      = "Status: #{@feature.state}"
-    %li
-      = "Total offered so far: #{@feature.current_amount}"
+#feature-state
+  #donate
+    = link_to 'Donate!', new_app_feature_donation_path(@feature.app, @feature)
+  %div
+    = "Status: #{@feature.state}"
+  %div
+    = "$#{@feature.current_amount} raised"
 
-%article
+#user-info
+  #user-pic
+    %img{ src: "#{@feature.user.photo_url}" }
+  #user-name
+    Suggested by 
+    %strong= "#{@feature.user.name}"
+
+%article.feature-description
   %p
     = @feature.description
-
-#donate
-  = link_to 'Donate!', new_app_feature_donation_path(@feature.app, @feature)
