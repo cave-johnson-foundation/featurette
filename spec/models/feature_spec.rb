@@ -14,7 +14,7 @@ describe Feature do
     end
     context 'after receiving some donations' do
       let(:ten_bucks) { build(:donation, amount: 10.0) }
-      
+
       subject {build :feature, goal: 20.0, state: :accepted}
 
       before do
@@ -28,14 +28,13 @@ describe Feature do
 
   context "states" do
     it "goes from suggested to accepted" do
-      pending 'nao rola'
+      feature.goal = 9000000
       expect {feature.accept!}.to change(feature, :state).from('suggested').to('accepted')
     end
     it "can go straight from suggested to financied when it is accepted" do
-      pending 'nao rola'
       feature.goal = 1
       feature.stub(:current_amount).and_return(100)
-      expect{feature.accept!}.to change(feature, :state).from('suggested').to('financed')
+      expect{feature.accept!}.to change(feature, :state).from('suggested').to('financied')
     end
   end
 end
