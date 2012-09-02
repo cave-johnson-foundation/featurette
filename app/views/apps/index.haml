@@ -22,14 +22,14 @@
             = donation.feature.name
           with
           %strong
-            = "R$ #{donation.amount}"
+            = number_to_currency donation.amount
         %p
           suggested by
           %strong
             = donation.user.name
           = image_tag donation.user.photo_url, class: "user-avatar"
           for
-          = "R$ #{donation.feature.current_amount}"
+          = number_to_currency donation.amount
         %p.date
           = "#{time_ago_in_words donation.created_at} ago"
 
