@@ -32,7 +32,7 @@ def current_user
 end
 def others_deploying?
   if 'true' == capture("if ls /tmp/deploying_* &> /dev/null; then echo 'true'; fi").strip
-    if !('false' == capture("if [ -e /tmp/deploying_#{current_user}]; then echo 'false'; fi").strip)
+    if ('false' == capture("if [ -e /tmp/deploying_#{current_user}]; then echo 'false'; fi").strip)
       false
     else
       true
