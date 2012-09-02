@@ -9,6 +9,7 @@ describe Feature do
   it { should validate_presence_of :description }
 
   describe '#receive' do
+    subject {build :feature, goal: 20.0, state: :accepted}
     let(:ten_bucks) { build(:donation, amount: 10.0) }
 
     before do
@@ -16,6 +17,7 @@ describe Feature do
     end
 
     its(:current_amount) { should eq 20.0 }
+    it {should be_financied}
   end
 
   describe '#first_donation' do

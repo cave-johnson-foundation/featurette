@@ -19,6 +19,7 @@ class Feature < ActiveRecord::Base
 
   def receive donation
     donations << donation
+    goal_reached if goal <= current_amount
   end
 
   def current_amount
@@ -30,14 +31,6 @@ class Feature < ActiveRecord::Base
       donations.find { |d| d.user == user }
     else
       Donation.new(user: user, amount: 0.0)
-    end
-  end
-
-  # acho que nao precisa
-  def add_to_total_amount value
-    update_attributes(current_amount: current_amount + value)
-    if goal <= current_amount
-      goal_reached
     end
   end
 end
