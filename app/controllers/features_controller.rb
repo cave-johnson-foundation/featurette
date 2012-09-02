@@ -1,5 +1,6 @@
 class FeaturesController < ApplicationController
-  before_filter :authenticate!, only: :update
+  before_filter :authenticate!, only: :create
+
   def new
     app = App.find params[:app_id]
     @feature = Feature.new(app: app, user: current_user)

@@ -25,13 +25,16 @@ describe FeaturesController do
   end
 
   describe '#create' do
+    let(:user) { create :user }
     let(:params) {{ 
       name: 'Free Access', 
       description: 'No bills.',
       app_id: app.id
     }}
 
+
     before do
+      session[:user_id] = user.id
       post :create, app_id: app.id, feature: params
     end
 
