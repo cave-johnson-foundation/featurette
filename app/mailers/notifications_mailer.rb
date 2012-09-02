@@ -1,4 +1,4 @@
-class Notifications < ActionMailer::Base
+class NotificationsMailer < ActionMailer::Base
   default from: "cavejohnson@example.com"
 
   def donated(donation_id, user_id)
