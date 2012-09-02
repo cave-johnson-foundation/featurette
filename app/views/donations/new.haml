@@ -1,3 +1,4 @@
+=c :donation_text, default: "Placeholder for donation page"
 %h1 Offer your donation for this idea!
 = form_for([@donation.feature.app, @donation.feature, @donation], url: app_feature_donations_path, method: 'post') do |f|
   - if @donation.errors.any?
