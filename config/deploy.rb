@@ -1,5 +1,6 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
+require "sidekiq/capistrano"
 set :rvm_type, :system  # Copy the exact line. I really mean :system here
 
 set :rvm_ruby_string, '1.9.3@cave-johnson-foundation'
