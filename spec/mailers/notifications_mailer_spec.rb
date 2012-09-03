@@ -14,7 +14,7 @@ describe NotificationsMailer do
 
 
     it "renders the headers" do
-      mail.subject.should eq("You have donated 10.0 to a feature - Featurette")
+      mail.subject.should eq("You have donated US$ 10.00 to a feature - Featurette")
       mail.to.should eq([user.email])
       mail.from.should eq(["cavejohnson@example.com"])
     end
