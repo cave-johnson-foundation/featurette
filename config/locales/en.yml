@@ -9,6 +9,6 @@ en:
             format: "%u %n"
             unit: "US$"
             # These three are to override number.format and are optional
-            separator: ","
-            delimiter: "."
+            separator: "."
+            delimiter: ","
             precision: 2
