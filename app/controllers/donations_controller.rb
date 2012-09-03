@@ -14,6 +14,7 @@ class DonationsController < ApplicationController
 
     respond_to do |format|
       if @donation.save && @feature.save
+        NotificationsMailer.delay.donated(@donation.id, current_user.id)
         format.html { redirect_to app_feature_path(@feature.app, @feature), notice: "Donation offered!" }
         format.json { head :no_content }
       else
