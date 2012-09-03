@@ -100,11 +100,15 @@
 
 #donate {
   font-size: 2em;
+  width: 100px;
+  float: left;
 }
 
 .feature-description {
   font-size: 1.25em;
   @include column(12);
+  width: 100%;
+  clear: both;
 }
 
 li.feature {
