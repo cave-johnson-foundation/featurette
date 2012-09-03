@@ -22,6 +22,3 @@
       - @app.features.each do |feature|
         %li.feature
           = link_to feature.name, app_feature_path(@app, feature)
-
-  %footer
-    = link_to 'Back', apps_path
