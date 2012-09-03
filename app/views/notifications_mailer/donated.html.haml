@@ -2,14 +2,14 @@ Hey,
 
 %br
 
-This is a reminder to your donation to feature #{@donation.feature.name}, which we hope will be implemented in #{@donation.feature.app.name}.
+This is a reminder to your donation to feature #{link_to @donation.feature.name, [@donation.feature.app, @donation.feature]}, which we hope will be implemented in #{link_to @donation.feature.app.name, @donation.feature.app}.
 
 %br
 Spread the word!
 %br
 %br
 Sincerely,
-
+%br
 %br
 = "-"
 %br
