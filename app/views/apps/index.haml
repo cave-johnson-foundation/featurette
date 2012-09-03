@@ -16,25 +16,26 @@
 #feature-list
   %h2 Latest donations
   - @latest_donations.each do |donation|
-    .feature-suggestion
-      .app-icon.logo.logo-big
-        %img{:src => donation.feature.app.logo.url(:thumb)}
-      .feature-details
-        %p.feature-title
-          %strong
-            = donation.feature.name
-          with
-          %strong
+    %a{ href: app_feature_path(donation.feature.app, donation.feature) }
+      .feature-suggestion
+        .app-icon.logo.logo-big
+          %img{:src => donation.feature.app.logo.url(:thumb)}
+        .feature-details
+          %p.feature-title
+            %strong
+              = donation.feature.name
+            with
+            %strong
+              = number_to_currency donation.amount
+          %p
+            suggested by
+            %strong
+              = donation.user.name
+            = image_tag donation.user.photo_url, class: "user-avatar"
+            for
             = number_to_currency donation.amount
-        %p
-          suggested by
-          %strong
-            = donation.user.name
-          = image_tag donation.user.photo_url, class: "user-avatar"
-          for
-          = number_to_currency donation.amount
-        %p.date
-          = "#{time_ago_in_words donation.created_at} ago"
+          %p.date
+            = "#{time_ago_in_words donation.created_at} ago"
 
 
 #app-list
