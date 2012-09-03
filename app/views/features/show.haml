@@ -11,8 +11,6 @@
       = @feature.app.name
 
 #feature-state
-  #donate
-    = link_to 'Donate!', new_app_feature_donation_path(@feature.app, @feature)
   .status
     = render @feature.state, feature: @feature
 
@@ -26,3 +24,6 @@
 %article.feature-description
   %p
     = @feature.description
+
+  #donate
+    = link_to 'Donate!', new_app_feature_donation_path(@feature.app, @feature)
