@@ -5,7 +5,7 @@ App: #{@feature.app.name}
 Feature: #{@feature.name}
 #{@feature.description}
 
-Amount funded: #{@feature.current_amount}/#{@feature.goal}
+Amount funded: #{number_to_currency @feature.current_amount}/#{number_to_currency @feature.goal}
 
 Now give the app developers some time while they accomplish what they do best -- create awesomeness!
 
