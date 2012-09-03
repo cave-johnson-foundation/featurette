@@ -23,7 +23,7 @@
 
 %article.feature-description
   %p
-    = @feature.description
+    = simple_format @feature.description
 
   #donate
     = link_to 'Donate!', new_app_feature_donation_path(@feature.app, @feature)
