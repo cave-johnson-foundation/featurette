@@ -73,14 +73,14 @@ section[role=main] {
 
 header {
   background-color: $header-background-color;
-  background-image: url("/assets/header-bg.png");
   background-repeat: repeat-x;
+  border-bottom: 3px solid #777;
 
   padding: 1.5em 0;
   @include append-bottom;
 
   #logo {
-    @include column(20);
+    @include column(15);
     h1 {
       margin: 0;
       font-family: BallparkWeiner;
@@ -94,10 +94,30 @@ header {
   }
 
   #masthead {
-    @include column(4);
+    @include column(6);
     @include last;
+    color: #666;
     a {
-      color: #424242;
+      color: #666;
+    }
+    .user {
+      margin-left: 20px;
+      .picture {
+        float: left;
+        img {
+          border-radius: 40px;
+          box-shadow: 1px 1px 1px rgba(0,0,0, 0.5);
+        }
+      }
+      .name {
+        float: left;
+        margin-left: 10px;
+        font-size: 20px;
+      }
+      .logout {
+        float: left;
+        margin-left: 10px;
+      }
     }
   }
 }
@@ -105,7 +125,7 @@ header {
 
 #app-list {
   ul {
-    margin: 0;
+    margin-left: -16px;
     padding-left: 0;
   }
   li {

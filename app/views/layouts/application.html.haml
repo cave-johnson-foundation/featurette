@@ -42,13 +42,13 @@
 
         #masthead
           - if current_user
-            %p
-              Welcome
-              %strong
+            .user
+              .picture
+                %img{ src: "#{current_user.photo_url}" }
+              .name
                 = current_user.name
-              &bull;
-              = link_to "Logout", logout_path
-              %img{ src: "#{current_user.photo_url}" }
+              .logout
+                = link_to "Logout", logout_path
           - else
             .login-button
               = link_to "Access with Facebook", "/auth/facebook", :id => "facebook-connect"
