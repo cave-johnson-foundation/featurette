@@ -38,12 +38,12 @@ body {
   @include blueprint-debug;
   @include blueprint-interaction;
   background: url("/assets/black_linen_v2.png");
-  font-family: Bariol;
   color: #ccc;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: $header-background-color;
+  font-family: Bariol;
 }
 
 .messages {
@@ -81,8 +81,10 @@ header {
 
   #logo {
     @include column(20);
-    h1 { margin: 0 }
-    font-family: BallparkWeiner;
+    h1 {
+      margin: 0;
+      font-family: BallparkWeiner;
+    }
     font-size: 1.5em;
     a {
       color: #696969;
@@ -94,6 +96,9 @@ header {
   #masthead {
     @include column(4);
     @include last;
+    a {
+      color: #424242;
+    }
   }
 }
 

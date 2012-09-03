@@ -10,6 +10,9 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 
+#home-content
+  =c :home_content, default: "Suggest features you want to Apps you ♥"
+
 #feature-list
   %h2 Latest donations
   - @latest_donations.each do |donation|
