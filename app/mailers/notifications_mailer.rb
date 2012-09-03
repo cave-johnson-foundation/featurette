@@ -1,5 +1,4 @@
 class NotificationsMailer < ActionMailer::Base
-  include
   default from: "cavejohnson@example.com"
 
   def donated(donation_id, user_id)
