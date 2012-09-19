@@ -1,4 +1,4 @@
-namespace :check do
+  namespace :check do
   desc "Make sure local git is in sync with remote."
   task :revision, roles: :web do
     unless `git rev-parse HEAD` == `git rev-parse origin/#{branch}`
